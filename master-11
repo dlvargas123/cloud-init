@@ -1,0 +1,15 @@
+#cloud-config
+hostname: master-11
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens160:
+      addresses:
+        - 10.10.0.11/24
+      routes:
+        - to: default
+          via: 10.10.0.1
+      nameservers:
+          addresses: [8.8.8.8, 1.1.1.1]
